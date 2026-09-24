@@ -30,11 +30,13 @@ El proyecto no necesita configuración adicional: Vercel detecta Next.js y usa `
 
 Cada push a `main` genera un deployment de producción y cada pull request su propio preview.
 
+`vercel.json` fija el framework en `nextjs` junto con el comando de build e instalación. Esto importa cuando el proyecto de Vercel se creó **antes** de que el repositorio tuviera código: en ese caso Vercel guarda el preset "Other" y el build falla buscando un directorio `public` de salida. Con `vercel.json` el preset del archivo manda por sobre el del dashboard.
+
 ### Dominio y URLs absolutas
 
 `lib/site.ts` resuelve la URL canónica que usan `metadataBase`, el sitemap y `robots.txt`. Sin configurar nada toma las variables que Vercel inyecta (`VERCEL_PROJECT_PRODUCTION_URL` en producción, `VERCEL_URL` en previews). Al conectar un dominio propio, define la variable de entorno `NEXT_PUBLIC_SITE_URL` (ej. `https://consultoria.nexsys.cl`) para fijarlo.
 
-La versión de Node queda fijada en 22 vía `engines.node` y `.nvmrc`, de modo que el build local y el de Vercel coincidan.
+Requiere Node 20 o superior (desarrollado y verificado en Node 22). No se fija la versión en el repositorio para que Vercel use la de su propia configuración de proyecto y no haya conflicto.
 
 ## Estructura
 
