@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Landing page de consultoría Adobe Enterprise — Carlos Zerpa · Nexsys Chile",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
