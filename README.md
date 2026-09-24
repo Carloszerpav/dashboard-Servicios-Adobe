@@ -20,6 +20,22 @@ npm run lint       # ESLint (next/core-web-vitals)
 npm run typecheck  # TypeScript sin emitir
 ```
 
+## Despliegue en Vercel
+
+El proyecto no necesita configuración adicional: Vercel detecta Next.js y usa `npm run build` con la salida estática de la App Router.
+
+1. En [vercel.com/new](https://vercel.com/new) importa el repositorio `dashboard-Servicios-Adobe`.
+2. Deja el framework preset en **Next.js** y el root directory en `./`.
+3. Pulsa **Deploy**. No hay variables de entorno obligatorias.
+
+Cada push a `main` genera un deployment de producción y cada pull request su propio preview.
+
+### Dominio y URLs absolutas
+
+`lib/site.ts` resuelve la URL canónica que usan `metadataBase`, el sitemap y `robots.txt`. Sin configurar nada toma las variables que Vercel inyecta (`VERCEL_PROJECT_PRODUCTION_URL` en producción, `VERCEL_URL` en previews). Al conectar un dominio propio, define la variable de entorno `NEXT_PUBLIC_SITE_URL` (ej. `https://consultoria.nexsys.cl`) para fijarlo.
+
+La versión de Node queda fijada en 22 vía `engines.node` y `.nvmrc`, de modo que el build local y el de Vercel coincidan.
+
 ## Estructura
 
 ```
@@ -27,6 +43,10 @@ app/
   layout.tsx          Metadata, fuente Inter y clase dark
   page.tsx            Composición de la landing
   globals.css         Tokens base, utilidades (.gradient-frame, .surface, .glass)
+  icon.svg            Favicon con el gradiente de marca
+  opengraph-image.tsx Imagen 1200x630 para compartir el enlace
+  robots.ts           robots.txt
+  sitemap.ts          sitemap.xml
 components/
   Navbar.tsx          Header fijo, badge "Partner" y menú móvil
   Hero.tsx            Branding personal + tarjeta de perfil glassmorphism
@@ -39,6 +59,7 @@ components/
   ui/                 Reveal (scroll reveal) y SectionHeading
 lib/
   content.ts          Contenido editable: perfil, pilares, planes, calculador
+  site.ts             URL canónica del sitio según el entorno
 ```
 
 Todo el contenido comercial (planes, horas, alcances, especialidades) vive en `lib/content.ts`; no hace falta tocar los componentes para actualizar la oferta.
