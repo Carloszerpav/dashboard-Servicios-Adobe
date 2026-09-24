@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 
+import { siteDescription, siteName, siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,13 +11,16 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default:
       "Carlos Zerpa · Consultoría Adobe Enterprise | Nexsys Chile",
     template: "%s | Nexsys Adobe Enterprise Consulting",
   },
-  description:
-    "Consultoría especializada Adobe: gobernanza, capacitación, automatización No-Code/Low-Code e integración de APIs en Document Cloud y Creative Cloud. Servicios distribuidos a través de Nexsys Chile.",
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+  },
   keywords: [
     "Adobe Enterprise",
     "Acrobat Sign",
@@ -32,8 +36,16 @@ export const metadata: Metadata = {
     title: "Consultoría Especializada Adobe · Carlos Zerpa | Nexsys Chile",
     description:
       "De la gobernanza a la automatización con IA: bolsas de horas de consultoría Adobe para resellers y clientes enterprise.",
+    url: "/",
+    siteName,
     locale: "es_CL",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Consultoría Especializada Adobe · Carlos Zerpa | Nexsys Chile",
+    description:
+      "De la gobernanza a la automatización con IA: bolsas de horas de consultoría Adobe para resellers y clientes enterprise.",
   },
 };
 
