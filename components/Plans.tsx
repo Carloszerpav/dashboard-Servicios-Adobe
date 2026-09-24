@@ -109,7 +109,6 @@ export function Plans() {
         <Reveal delay={0.15} className="mt-10">
           <p className="text-center text-[12.5px] text-white/35">
             Las bolsas son acumulables y combinables entre líneas de servicio.
-            Los valores se cotizan formalmente a través de Nexsys Chile.
           </p>
         </Reveal>
       </div>

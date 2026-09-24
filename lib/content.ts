@@ -21,7 +21,7 @@ export const profile = {
   name: "Carlos Zerpa",
   role: "Preventa Adobe Enterprise · Systems Analyst",
   company: "Nexsys Chile",
-  email: "carlos.zerpa@nexsyslatam.com",
+  email: "carlos.zerpav@nexsysla.com",
   /**
    * Reemplazar por la ruta de la fotografía profesional (ej. "/carlos-zerpa.jpg").
    * Si es null se muestra el avatar tipográfico de respaldo.
@@ -325,7 +325,7 @@ export const calculatorOptions: CalculatorOption[] = [
 export const hourPackages = [10, 24, 50, 100, 120] as const;
 
 export const footerHighlights = [
-  { label: "Cobertura", value: "Chile y LATAM", icon: Layers },
+  { label: "Cobertura", value: "Chile", icon: Layers },
   { label: "Modalidad", value: "Remoto / Híbrido", icon: Plug },
-  { label: "Distribución", value: "Nexsys Chile", icon: BadgeCheck },
+  { label: "Facturación", value: "Directa o vía Nexsys", icon: BadgeCheck },
 ];

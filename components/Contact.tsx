@@ -83,6 +83,11 @@ export function Contact() {
                 {profile.email}
               </span>
             </a>
+
+            <p className="pt-1 text-[12.5px] leading-relaxed text-white/40">
+              La facturación se adapta a como mejor le sirva al canal: puedo
+              emitirla yo directamente o canalizarla a través de Nexsys.
+            </p>
           </Reveal>
         </div>
 
