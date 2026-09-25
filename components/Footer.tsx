@@ -1,3 +1,4 @@
+import { BrandLockup } from "@/components/ui/BrandLockup";
 import { navLinks, profile } from "@/lib/content";
 
 export function Footer() {
@@ -8,19 +9,11 @@ export function Footer() {
       <div className="container-page py-14">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-sm">
-            <div className="flex items-center gap-3">
-              <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-brand-gradient text-sm font-bold text-white">
-                N
-              </span>
-              <div className="leading-tight">
-                <p className="text-sm font-semibold tracking-tight text-white">
-                  Nexsys | Adobe Enterprise Consulting
-                </p>
-                <p className="mt-0.5 text-[12px] text-white/40">
-                  {profile.name} · {profile.role}
-                </p>
-              </div>
-            </div>
+            <BrandLockup size="lg" />
+            <p className="mt-5 text-[12.5px] leading-relaxed text-white/45">
+              Enterprise Consulting · {profile.name}
+              <span className="block text-white/30">{profile.role}</span>
+            </p>
             <p className="mt-5 text-[12.5px] leading-relaxed text-white/40">
               Servicios distribuidos oficialmente a través de Nexsys Chile.
               Adobe, Acrobat Sign, Creative Cloud, Document Cloud y Firefly son

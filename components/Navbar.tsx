@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
+import { BrandLockup } from "@/components/ui/BrandLockup";
 import { EASE } from "@/components/ui/Reveal";
 import { navLinks } from "@/lib/content";
 
@@ -34,17 +35,15 @@ export function Navbar() {
       }`}
     >
       <nav className="container-page flex h-[72px] items-center justify-between gap-6">
-        <a href="#inicio" className="group flex items-center gap-3">
-          <span className="relative flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-gradient text-sm font-bold text-white shadow-glow">
-            N
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="flex items-center gap-2 whitespace-nowrap text-sm font-semibold tracking-tight text-white">
-              Nexsys
-              <span className="hidden text-white/25 sm:inline">|</span>
-              <span className="hidden text-white/70 transition-colors group-hover:text-white sm:inline">
-                Adobe Enterprise Consulting
-              </span>
+        <a
+          href="#inicio"
+          aria-label="Nexsys · Adobe Enterprise Consulting"
+          className="group flex items-center gap-3 sm:gap-4"
+        >
+          <BrandLockup size="sm" priority />
+          <span className="hidden flex-col leading-tight sm:flex">
+            <span className="whitespace-nowrap text-[12.5px] font-medium tracking-tight text-white/70 transition-colors group-hover:text-white">
+              Enterprise Consulting
             </span>
             <span className="mt-0.5 flex items-center gap-1.5">
               <span className="h-1 w-1 rounded-full bg-adobe-red animate-pulse-soft" />
@@ -55,12 +54,12 @@ export function Navbar() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 lg:flex">
+        <ul className="hidden items-center gap-1 xl:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="rounded-full px-3 py-2 text-[13px] font-medium text-white/60 transition-colors hover:bg-white/5 hover:text-white"
+                className="whitespace-nowrap rounded-full px-3 py-2 text-[13px] font-medium text-white/60 transition-colors hover:bg-white/5 hover:text-white"
               >
                 {link.label}
               </a>
@@ -71,7 +70,7 @@ export function Navbar() {
         <div className="flex items-center gap-2">
           <a
             href="#contacto"
-            className="hidden rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-ink-950 transition-all hover:bg-white/85 hover:shadow-glow sm:inline-flex"
+            className="hidden whitespace-nowrap rounded-full bg-white px-4 py-2 text-[13px] font-semibold text-ink-950 transition-all hover:bg-white/85 hover:shadow-glow sm:inline-flex"
           >
             Agendar Evaluación
           </a>
@@ -80,7 +79,7 @@ export function Navbar() {
             onClick={() => setOpen((value) => !value)}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
             aria-expanded={open}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/80 transition-colors hover:text-white lg:hidden"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/80 transition-colors hover:text-white xl:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -94,7 +93,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: EASE }}
-            className="overflow-hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-xl lg:hidden"
+            className="overflow-hidden border-t border-white/10 bg-ink-950/95 backdrop-blur-xl xl:hidden"
           >
             <ul className="container-page flex flex-col gap-1 py-5">
               {navLinks.map((link) => (

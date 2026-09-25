@@ -111,14 +111,14 @@ function ProfileCard() {
   return (
     <div className="glass rounded-3xl p-6 shadow-elevated sm:p-8">
       <div className="flex items-center gap-4">
-        <div className="relative h-20 w-20 shrink-0 rounded-2xl bg-brand-gradient p-px">
+        <div className="relative h-24 w-24 shrink-0 rounded-2xl bg-brand-gradient p-px">
           <div className="flex h-full w-full items-center justify-center overflow-hidden rounded-[15px] bg-ink-900">
             {profile.photoUrl ? (
               <Image
                 src={profile.photoUrl}
                 alt={`Fotografía de ${profile.name}`}
-                width={160}
-                height={160}
+                width={240}
+                height={240}
                 className="h-full w-full object-cover"
                 priority
               />

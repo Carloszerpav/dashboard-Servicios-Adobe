@@ -22,11 +22,8 @@ export const profile = {
   role: "Preventa Adobe Enterprise · Systems Analyst",
   company: "Nexsys Chile",
   email: "carlos.zerpav@nexsysla.com",
-  /**
-   * Reemplazar por la ruta de la fotografía profesional (ej. "/carlos-zerpa.jpg").
-   * Si es null se muestra el avatar tipográfico de respaldo.
-   */
-  photoUrl: null as string | null,
+  /** Si es null se muestra el avatar tipográfico de respaldo. */
+  photoUrl: "/carlos-zerpa.jpg" as string | null,
   initials: "CZ",
 };
 

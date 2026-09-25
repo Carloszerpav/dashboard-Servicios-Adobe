@@ -58,7 +58,8 @@ components/
   Contact.tsx         Formulario de contacto
   Footer.tsx          Legales y branding
   QuoteProvider.tsx   Contexto que precarga el mensaje del formulario
-  ui/                 Reveal (scroll reveal) y SectionHeading
+  ui/                 BrandLockup (logos), Reveal (scroll reveal) y SectionHeading
+public/               Logos Nexsys y Adobe + fotografía de perfil
 lib/
   content.ts          Contenido editable: perfil, pilares, planes, calculador
   site.ts             URL canónica del sitio según el entorno
@@ -76,6 +77,8 @@ Todo el contenido comercial (planes, horas, alcances, especialidades) vive en `l
 
 ## Personalización
 
-**Fotografía de perfil:** deja el archivo en `public/` y apunta `profile.photoUrl` en `lib/content.ts` (ej. `"/carlos-zerpa.jpg"`). Mientras sea `null` se muestra el avatar tipográfico con las iniciales.
+**Imágenes de marca.** En `public/` viven `nexsys-logo.png` (180x34, blanco con transparencia), `adobe-logo.png` (480x116) y `carlos-zerpa.jpg` (640x640, encuadre a rostro y hombros). Los logos se muestran con `components/ui/BrandLockup.tsx`, que los sirve sin optimizar para mantener los bordes nítidos; si reemplazas un archivo por otro de distinta proporción, actualiza las constantes `NEXSYS_RATIO` / `ADOBE_RATIO` de ese componente.
+
+**Fotografía de perfil:** apunta `profile.photoUrl` en `lib/content.ts` al archivo dentro de `public/`. Si queda en `null` se muestra el avatar tipográfico con las iniciales.
 
 **Envío del formulario:** `handleSubmit` en `components/Contact.tsx` simula el envío. Reemplaza el `setTimeout` por la llamada real al endpoint, CRM o servicio de correo de Nexsys.
