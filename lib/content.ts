@@ -19,7 +19,7 @@ import {
 
 export const profile = {
   name: "Carlos Zerpa",
-  role: "Preventa Adobe Enterprise · Systems Analyst",
+  role: "Preventa Adobe · Systems Analyst",
   company: "Nexsys Chile",
   email: "carlos.zerpav@nexsysla.com",
   /** Si es null se muestra el avatar tipográfico de respaldo. */
@@ -100,7 +100,7 @@ export const pillars: Pillar[] = [
     index: "04",
     title: "Implementación Técnica & APIs",
     description:
-      "Desarrollos REST API, Webhooks, PDF Services API y Firefly Services para escenarios enterprise.",
+      "Desarrollos REST API, Webhooks, PDF Services API y Firefly Services para escenarios de alto volumen.",
     bullets: [
       "Integración REST con ERP/CRM y middleware",
       "Webhooks en tiempo real y reintentos",
@@ -171,7 +171,7 @@ export const planCategories: PlanCategory[] = [
       },
       {
         id: "dc-3",
-        name: "Enterprise Integration & API",
+        name: "Advanced Integration & API",
         dedication: "Bolsa de 50 hrs",
         tag: "Integración",
         icon: Network,
@@ -224,9 +224,9 @@ export const planCategories: PlanCategory[] = [
       },
       {
         id: "cc-3",
-        name: "Enterprise AI & Firefly Services APIs",
+        name: "Advanced AI & Firefly Services APIs",
         dedication: "Bolsa de 100 hrs",
-        tag: "IA Enterprise",
+        tag: "IA Avanzada",
         icon: Aperture,
         summary:
           "Generación de contenido a escala industrial con modelos propios y trazabilidad.",

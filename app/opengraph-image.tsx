@@ -64,7 +64,7 @@ export default function OpengraphImage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ color: "#FFFFFF", fontSize: 26, fontWeight: 600 }}>
-              Nexsys | Adobe Enterprise Consulting
+              Nexsys | Consultoría Adobe
             </div>
             <div
               style={{
@@ -117,7 +117,7 @@ export default function OpengraphImage() {
           }}
         >
           <div style={{ color: "rgba(255,255,255,0.75)", fontSize: 24 }}>
-            Carlos Zerpa · Preventa Adobe Enterprise
+            Carlos Zerpa · Preventa Adobe
           </div>
           <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 22 }}>
             Document Cloud · Creative Cloud · Firefly

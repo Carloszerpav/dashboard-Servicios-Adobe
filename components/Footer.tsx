@@ -11,7 +11,7 @@ export function Footer() {
           <div className="max-w-sm">
             <BrandLockup size="lg" />
             <p className="mt-5 text-[12.5px] leading-relaxed text-white/45">
-              Enterprise Consulting · {profile.name}
+              Consultoría Especializada · {profile.name}
               <span className="block text-white/30">{profile.role}</span>
             </p>
             <p className="mt-5 text-[12.5px] leading-relaxed text-white/40">
@@ -54,7 +54,7 @@ export function Footer() {
           </p>
           <p className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-adobe-red" />
-            Adobe Enterprise Partner — Nexsys Chile
+            Adobe Partner — Nexsys Chile
           </p>
         </div>
       </div>

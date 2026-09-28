@@ -13,16 +13,14 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default:
-      "Carlos Zerpa · Consultoría Adobe Enterprise | Nexsys Chile",
-    template: "%s | Nexsys Adobe Enterprise Consulting",
+    default: "Carlos Zerpa · Consultoría Adobe | Nexsys Chile",
+    template: "%s | Nexsys Consultoría Adobe",
   },
   description: siteDescription,
   alternates: {
     canonical: "/",
   },
   keywords: [
-    "Adobe Enterprise",
     "Acrobat Sign",
     "Document Cloud",
     "Creative Cloud",
@@ -35,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Consultoría Especializada Adobe · Carlos Zerpa | Nexsys Chile",
     description:
-      "De la gobernanza a la automatización con IA: bolsas de horas de consultoría Adobe para resellers y clientes enterprise.",
+      "De la gobernanza a la automatización con IA: bolsas de horas de consultoría Adobe para resellers y clientes corporativos.",
     url: "/",
     siteName,
     locale: "es_CL",
@@ -45,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Consultoría Especializada Adobe · Carlos Zerpa | Nexsys Chile",
     description:
-      "De la gobernanza a la automatización con IA: bolsas de horas de consultoría Adobe para resellers y clientes enterprise.",
+      "De la gobernanza a la automatización con IA: bolsas de horas de consultoría Adobe para resellers y clientes corporativos.",
   },
 };
 

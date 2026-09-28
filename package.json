@@ -2,7 +2,7 @@
   "name": "dashboard-servicios-adobe",
   "version": "1.0.0",
   "private": true,
-  "description": "Landing page de consultoría Adobe Enterprise — Carlos Zerpa · Nexsys Chile",
+  "description": "Landing page de consultoría Adobe — Carlos Zerpa · Nexsys Chile",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

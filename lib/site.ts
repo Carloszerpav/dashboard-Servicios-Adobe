@@ -26,7 +26,7 @@ function resolveSiteUrl() {
 
 export const siteUrl = resolveSiteUrl();
 
-export const siteName = "Nexsys | Adobe Enterprise Consulting";
+export const siteName = "Nexsys | Consultoría Adobe";
 
 export const siteDescription =
   "Consultoría especializada Adobe: gobernanza, capacitación, automatización No-Code/Low-Code e integración de APIs en Document Cloud y Creative Cloud. Servicios distribuidos a través de Nexsys Chile.";

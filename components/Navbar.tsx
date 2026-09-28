@@ -37,13 +37,13 @@ export function Navbar() {
       <nav className="container-page flex h-[72px] items-center justify-between gap-6">
         <a
           href="#inicio"
-          aria-label="Nexsys · Adobe Enterprise Consulting"
+          aria-label="Nexsys · Consultoría Adobe"
           className="group flex items-center gap-3 sm:gap-4"
         >
           <BrandLockup size="sm" priority />
           <span className="hidden flex-col leading-tight sm:flex">
             <span className="whitespace-nowrap text-[12.5px] font-medium tracking-tight text-white/70 transition-colors group-hover:text-white">
-              Enterprise Consulting
+              Consultoría Especializada
             </span>
             <span className="mt-0.5 flex items-center gap-1.5">
               <span className="h-1 w-1 rounded-full bg-adobe-red animate-pulse-soft" />

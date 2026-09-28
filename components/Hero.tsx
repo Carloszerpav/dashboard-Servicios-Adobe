@@ -138,7 +138,7 @@ function ProfileCard() {
             {profile.name}
           </p>
           <p className="mt-1 text-[13px] leading-snug text-white/50">
-            Consultor / Preventa Adobe Enterprise
+            Consultor / Preventa Adobe
           </p>
           <p className="mt-0.5 text-[13px] font-medium text-white/70">
             {profile.company}

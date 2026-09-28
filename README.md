@@ -1,6 +1,6 @@
-# Adobe Enterprise Consulting — Landing Page
+# Consultoría Adobe — Landing Page
 
-Landing page de la oferta de consultoría Adobe de **Carlos Zerpa** (Preventa Adobe Enterprise · Systems Analyst), distribuida a través de **Nexsys Chile**.
+Landing page de la oferta de consultoría Adobe de **Carlos Zerpa** (Preventa Adobe · Systems Analyst), distribuida a través de **Nexsys Chile**.
 
 Construida con **Next.js (App Router)**, **Tailwind CSS**, **Framer Motion** y **TypeScript**, con estética dark minimalista inspirada en Adobe Spectrum.
 
