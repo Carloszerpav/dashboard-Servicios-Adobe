@@ -31,11 +31,12 @@ export function OrbitalExperience() {
   return (
     <div className="relative w-full">
       {/* El lado del cuadrado se limita por la altura libre para que la órbita
-          nunca desborde: 24rem cubren encabezado, pie y espaciados. */}
+          nunca desborde: 24rem cubren encabezado, pie y espaciados. El mínimo
+          evita que las etiquetas se amontonen en ventanas muy bajas. */}
       <motion.div
         initial="hidden"
         animate="show"
-        className="relative mx-auto aspect-square w-[min(100%,calc(100vh-24rem))] max-w-[46rem]"
+        className="relative mx-auto aspect-square w-[min(100%,calc(100vh-24rem))] min-w-[20rem] max-w-[46rem]"
       >
         <OrbitField highlightedId={highlightedId} />
         <OrbitCore />
@@ -58,7 +59,7 @@ export function OrbitalExperience() {
         initial={{ opacity: 0 }}
         animate={{ opacity: active ? 0 : 1 }}
         transition={{ duration: 0.6, delay: active ? 0 : 2.2, ease: EASE }}
-        className="mt-2 text-center text-[12.5px] text-white/35"
+        className="mt-6 text-center text-[12.5px] text-white/35"
       >
         Selecciona un segmento para conocer al equipo
       </motion.p>

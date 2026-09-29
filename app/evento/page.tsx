@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function EventoPage() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-hidden px-5 py-10 sm:px-8 sm:py-12">
+    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-x-hidden px-5 py-10 sm:px-8 sm:py-12">
       <AmbientBackdrop />
 
       <header className="animate-fade-up flex flex-col items-center text-center">
