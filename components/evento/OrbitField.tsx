@@ -5,12 +5,12 @@ import { motion, useReducedMotion } from "framer-motion";
 import { EASE } from "@/components/ui/Reveal";
 import {
   DECOR_RADIUS,
+  ORBIT_CENTER,
   ORBIT_RADIUS,
   orbitPosition,
+  polarPosition,
   teamSegments,
 } from "@/lib/team";
-
-const CENTER = 50;
 
 /** Anillos en orden de aparición, con el retardo de su entrada. */
 const RINGS = [
@@ -21,10 +21,7 @@ const RINGS = [
   { radius: DECOR_RADIUS[2], delay: 0.95, dashed: true },
 ];
 
-/**
- * Puntos decorativos que orbitan lentamente. Las posiciones son fijas para que
- * el render del servidor y del cliente coincidan.
- */
+/** Puntos decorativos que orbitan lentamente, en posiciones fijas. */
 const DRIFT_LAYERS = [
   {
     duration: 210,
@@ -53,15 +50,6 @@ const DRIFT_LAYERS = [
   },
 ];
 
-function polar(radius: number, angle: number) {
-  const radians = (angle * Math.PI) / 180;
-
-  return {
-    x: CENTER + radius * Math.cos(radians),
-    y: CENTER + radius * Math.sin(radians),
-  };
-}
-
 type OrbitFieldProps = {
   /** Segmento resaltado por hover, foco o selección. */
   highlightedId: string | null;
@@ -84,8 +72,8 @@ export function OrbitField({ highlightedId }: OrbitFieldProps) {
         return (
           <line
             key={`spoke-${segment.id}`}
-            x1={CENTER}
-            y1={CENTER}
+            x1={ORBIT_CENTER}
+            y1={ORBIT_CENTER}
             x2={x}
             y2={y}
             vectorEffect="non-scaling-stroke"
@@ -102,8 +90,8 @@ export function OrbitField({ highlightedId }: OrbitFieldProps) {
       {RINGS.map((ring) => (
         <motion.circle
           key={`ring-${ring.radius}`}
-          cx={CENTER}
-          cy={CENTER}
+          cx={ORBIT_CENTER}
+          cy={ORBIT_CENTER}
           fill="none"
           stroke="#FFFFFF"
           strokeOpacity={ring.dashed ? 0.05 : 0.1}
@@ -118,7 +106,7 @@ export function OrbitField({ highlightedId }: OrbitFieldProps) {
       {DRIFT_LAYERS.map((layer) => (
         <motion.g
           key={`drift-${layer.duration}`}
-          style={{ transformOrigin: `${CENTER}px ${CENTER}px` }}
+          style={{ transformOrigin: `${ORBIT_CENTER}px ${ORBIT_CENTER}px` }}
           initial={{ opacity: 0 }}
           animate={
             reduceMotion
@@ -131,7 +119,7 @@ export function OrbitField({ highlightedId }: OrbitFieldProps) {
           }}
         >
           {layer.dots.map((dot) => {
-            const { x, y } = polar(dot.radius, dot.angle);
+            const { x, y } = polarPosition(dot.radius, dot.angle);
 
             return (
               <circle

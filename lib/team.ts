@@ -202,15 +202,29 @@ export const teamSegments: TeamSegment[] = [
   },
 ];
 
-/** Coordenadas en porcentaje del lienzo, con el centro en (50, 50). */
-export function orbitPosition(segment: TeamSegment) {
-  const radians = (segment.angle * Math.PI) / 180;
-  const radius = ORBIT_RADIUS[segment.orbit];
+/** Centro del lienzo en el mismo sistema de porcentajes que los radios. */
+export const ORBIT_CENTER = 50;
+
+/**
+ * Coordenadas polares en porcentaje del lienzo. Se redondean porque `Math.cos`
+ * puede diferir en el último bit entre Node y el navegador, lo que provoca un
+ * desajuste de hidratación al escribir la posición en el markup.
+ */
+export function polarPosition(radius: number, angle: number) {
+  const radians = (angle * Math.PI) / 180;
 
   return {
-    x: 50 + radius * Math.cos(radians),
-    y: 50 + radius * Math.sin(radians),
+    x: round(ORBIT_CENTER + radius * Math.cos(radians)),
+    y: round(ORBIT_CENTER + radius * Math.sin(radians)),
   };
+}
+
+export function orbitPosition(segment: TeamSegment) {
+  return polarPosition(ORBIT_RADIUS[segment.orbit], segment.angle);
+}
+
+function round(value: number) {
+  return Math.round(value * 1e4) / 1e4;
 }
 
 /** Imagen del canal de WhatsApp; reemplazable por otro archivo en `public/evento/`. */
