@@ -43,12 +43,12 @@ export type OrbitLevel = 1 | 2;
 
 /** Radios en porcentaje del lienzo orbital cuadrado (SVG y CSS comparten escala). */
 export const ORBIT_RADIUS: Record<OrbitLevel, number> = {
-  1: 24,
+  1: 29,
   2: 41,
 };
 
 /** Anillos sin nodos que dan profundidad a la composición. */
-export const DECOR_RADIUS = [15, 32.5, 47] as const;
+export const DECOR_RADIUS = [14, 35, 47] as const;
 
 const ACCENT = {
   red: {

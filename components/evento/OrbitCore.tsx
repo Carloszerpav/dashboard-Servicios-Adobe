@@ -17,11 +17,11 @@ export function OrbitCore() {
   return (
     <motion.div
       variants={coreVariants}
-      className="absolute left-1/2 top-1/2 h-[22%] w-[22%] -translate-x-1/2 -translate-y-1/2"
+      className="absolute left-1/2 top-1/2 h-[20%] w-[20%] -translate-x-1/2 -translate-y-1/2"
     >
       <div
         aria-hidden
-        className="absolute -inset-4 rounded-full bg-brand-gradient opacity-25 blur-2xl"
+        className="absolute -inset-1 rounded-full bg-brand-gradient opacity-20 blur-lg"
       />
 
       <div className="relative h-full w-full rounded-full bg-brand-gradient p-px shadow-elevated">

@@ -93,7 +93,7 @@ export function OrbitField({ highlightedId }: OrbitFieldProps) {
             style={{
               stroke: highlighted ? segment.accent.stroke : "#FFFFFF",
               strokeWidth: highlighted ? 1.5 : 1,
-              opacity: highlighted ? 0.75 : 0.07,
+              opacity: highlighted ? 0.75 : 0.12,
             }}
           />
         );

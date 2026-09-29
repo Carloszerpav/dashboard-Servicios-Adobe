@@ -71,7 +71,7 @@ export function SegmentNode({
       </span>
 
       <span
-        className={`absolute left-1/2 top-[calc(100%-0.35rem)] w-[8.5rem] -translate-x-1/2 text-balance text-[11px] font-semibold uppercase leading-tight tracking-[0.14em] transition-colors duration-300 sm:text-[12px] ${
+        className={`absolute left-1/2 top-[calc(100%-0.35rem)] w-24 -translate-x-1/2 text-balance text-[10px] font-semibold uppercase leading-tight tracking-[0.14em] transition-colors duration-300 sm:w-32 sm:text-[11.5px] lg:w-36 lg:text-[13px] ${
           active ? "text-white" : "text-white/55 group-hover:text-white"
         }`}
       >

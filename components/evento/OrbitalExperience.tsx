@@ -30,10 +30,12 @@ export function OrbitalExperience() {
 
   return (
     <div className="relative w-full">
+      {/* El lado del cuadrado se limita por la altura libre para que la órbita
+          nunca desborde: 24rem cubren encabezado, pie y espaciados. */}
       <motion.div
         initial="hidden"
         animate="show"
-        className="relative mx-auto aspect-square w-full max-w-[32rem] sm:max-w-[40rem] lg:max-w-[min(70vh,48rem)]"
+        className="relative mx-auto aspect-square w-[min(100%,calc(100vh-24rem))] max-w-[46rem]"
       >
         <OrbitField highlightedId={highlightedId} />
         <OrbitCore />

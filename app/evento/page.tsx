@@ -28,7 +28,7 @@ export default function EventoPage() {
         </h1>
       </header>
 
-      <div className="flex w-full flex-1 items-center justify-center py-6">
+      <div className="flex min-h-0 w-full flex-1 items-center justify-center py-6">
         <OrbitalExperience />
       </div>
 
