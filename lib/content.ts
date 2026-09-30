@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Aperture,
   BadgeCheck,
   Blocks,
   BrainCircuit,
@@ -167,11 +166,12 @@ export const planCategories: PlanCategory[] = [
           "Integración con M365 (Teams / SharePoint)",
           "3 flujos automatizados en Power Automate",
           "Modelo de permisos, alertas y trazabilidad",
+          "Gobernanza de datos con Microsoft Purview y Adobe",
         ],
       },
       {
         id: "dc-3",
-        name: "Advanced Integration & API",
+        name: "PDF Services",
         dedication: "Bolsa de 50 hrs",
         tag: "Integración",
         icon: Network,
@@ -220,20 +220,7 @@ export const planCategories: PlanCategory[] = [
           "Automatización de retoque masivo con scripts UXP",
           "Plantillas corporativas en Adobe Express",
           "Estandarización de entregables multiformato",
-        ],
-      },
-      {
-        id: "cc-3",
-        name: "Advanced AI & Firefly Services APIs",
-        dedication: "Bolsa de 100 hrs",
-        tag: "IA Avanzada",
-        icon: Aperture,
-        summary:
-          "Generación de contenido a escala industrial con modelos propios y trazabilidad.",
-        scope: [
-          "Integración de Firefly APIs para volumen masivo",
-          "Entrenamiento de Custom Models de marca",
-          "Trazabilidad de contenido con C2PA",
+          "Interacción de Microsoft Copilot con la suite creativa de Adobe",
         ],
       },
     ],
