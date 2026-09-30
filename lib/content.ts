@@ -161,12 +161,12 @@ export const planCategories: PlanCategory[] = [
         icon: Workflow,
         featured: true,
         summary:
-          "Los procesos de firma viven donde ya trabaja tu equipo: Teams y SharePoint.",
+          "Los procesos de firma y la protección de datos viven donde ya trabaja tu equipo: Teams, SharePoint y Microsoft 365.",
         scope: [
           "Integración con M365 (Teams / SharePoint)",
           "3 flujos automatizados en Power Automate",
           "Modelo de permisos, alertas y trazabilidad",
-          "Gobernanza de datos con Microsoft Purview y Adobe",
+          "Microsoft Purview + Acrobat: etiquetas de sensibilidad, clasificación y protección de datos en PDF",
         ],
       },
       {
@@ -215,12 +215,12 @@ export const planCategories: PlanCategory[] = [
         icon: Paintbrush,
         featured: true,
         summary:
-          "Menos trabajo repetitivo en el pipeline creativo, más piezas por sprint.",
+          "Menos trabajo repetitivo en el pipeline creativo, más piezas por sprint, ahora también desde Microsoft 365 Copilot.",
         scope: [
           "Automatización de retoque masivo con scripts UXP",
           "Plantillas corporativas en Adobe Express",
           "Estandarización de entregables multiformato",
-          "Interacción de Microsoft Copilot con la suite creativa de Adobe",
+          "Microsoft 365 Copilot + suite creativa: Express, Firefly y activos Adobe en Word, PowerPoint y Teams",
         ],
       },
     ],
