@@ -19,14 +19,14 @@ export function SegmentPanel({ group, onClose }: SegmentPanelProps) {
     <EventModal
       onClose={onClose}
       labelledBy={headingId}
-      className={solo ? "max-w-md" : "max-w-2xl"}
+      className={solo ? "max-w-md" : "max-w-3xl"}
     >
       <div
         aria-hidden
         className={`pointer-events-none absolute inset-x-0 -top-24 h-48 bg-gradient-to-b ${group.accent.glow} to-transparent opacity-60 blur-2xl`}
       />
 
-      <div className="relative flex items-center gap-3 pr-12">
+      <div className="relative flex items-center gap-3">
         <span className={`h-px w-8 bg-current ${group.accent.text}`} />
         <span className="eyebrow">{group.eyebrow}</span>
       </div>
@@ -56,7 +56,7 @@ export function SegmentPanel({ group, onClose }: SegmentPanelProps) {
           />
         </div>
       ) : (
-        <div className="relative grid gap-3 sm:grid-cols-2">
+        <div className="relative grid gap-4 sm:grid-cols-2">
           {group.members.map((member, index) => (
             <MemberCard
               key={member.id}

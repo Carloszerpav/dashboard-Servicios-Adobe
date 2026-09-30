@@ -14,6 +14,23 @@ export const nodeVariants = {
   },
 };
 
+/** Coloca la etiqueta hacia afuera del centro para que no choque con el vecino. */
+function labelPlacement(angle: number) {
+  const radians = (angle * Math.PI) / 180;
+  const outwardX = Math.cos(radians);
+  const outwardY = Math.sin(radians);
+
+  if (Math.abs(outwardY) > Math.abs(outwardX)) {
+    return outwardY > 0
+      ? "left-1/2 top-[calc(100%+0.4rem)] w-32 -translate-x-1/2 text-center sm:w-40"
+      : "bottom-[calc(100%+0.4rem)] left-1/2 w-32 -translate-x-1/2 text-center sm:w-40";
+  }
+
+  return outwardX > 0
+    ? "left-[calc(100%+0.55rem)] top-1/2 w-36 -translate-y-1/2 text-left sm:w-44"
+    : "right-[calc(100%+0.55rem)] top-1/2 w-36 -translate-y-1/2 text-right sm:w-44";
+}
+
 type SegmentNodeProps = {
   segment: TeamSegment;
   active: boolean;
@@ -71,9 +88,9 @@ export function SegmentNode({
       </span>
 
       <span
-        className={`absolute left-1/2 top-[calc(100%-0.35rem)] w-24 -translate-x-1/2 text-balance text-[10px] font-semibold uppercase leading-tight tracking-[0.14em] transition-colors duration-300 sm:w-32 sm:text-[11.5px] lg:w-36 lg:text-[13px] ${
-          active ? "text-white" : "text-white/55 group-hover:text-white"
-        }`}
+        className={`absolute text-balance text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] transition-colors duration-300 sm:text-[12px] lg:text-[13px] ${labelPlacement(
+          segment.angle,
+        )} ${active ? "text-white" : "text-white/55 group-hover:text-white"}`}
       >
         {segment.label}
       </span>

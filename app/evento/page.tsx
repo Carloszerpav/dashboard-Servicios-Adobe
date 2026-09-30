@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function EventoPage() {
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-x-hidden px-5 py-10 sm:px-8 sm:py-12">
+    <main className="relative flex min-h-screen flex-col items-center justify-between overflow-x-hidden px-5 py-6 sm:px-8 sm:py-8">
       <AmbientBackdrop />
 
       <header className="animate-fade-up flex flex-col items-center text-center">
@@ -30,7 +30,7 @@ export default function EventoPage() {
         <BrandTeamTrigger />
       </header>
 
-      <div className="flex min-h-0 w-full flex-1 items-center justify-center py-6">
+      <div className="flex min-h-0 w-full flex-1 items-center justify-center py-3">
         <OrbitalExperience />
       </div>
 
@@ -39,7 +39,7 @@ export default function EventoPage() {
           aria-hidden
           className="mx-auto h-px max-w-3xl bg-gradient-to-r from-transparent via-white/10 to-transparent"
         />
-        <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <WhatsAppChannel />
           <Link
             href="/"

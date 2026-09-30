@@ -38,7 +38,7 @@ export function MemberCard({
       className={
         solo
           ? "flex flex-col items-center text-center"
-          : "flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4"
+          : "flex items-start gap-4 rounded-xl border border-white/10 bg-white/[0.03] p-4 sm:p-5"
       }
     >
       <div className={`relative shrink-0 rounded-2xl bg-brand-gradient p-px ${frame}`}>
@@ -61,18 +61,18 @@ export function MemberCard({
         </div>
       </div>
 
-      <div className={solo ? "mt-5" : "min-w-0"}>
+      <div className={solo ? "mt-5" : "min-w-0 flex-1"}>
         <p
           className={`font-semibold tracking-tight text-white ${
-            solo ? "text-xl sm:text-[1.35rem]" : "text-[15px]"
+            solo ? "text-xl sm:text-[1.35rem]" : "text-[15px] leading-snug"
           }`}
         >
           {member.name}
         </p>
         {caption ? (
           <p
-            className={`leading-snug text-white/50 ${
-              solo ? "mt-2 text-sm" : "mt-1 text-[12.5px]"
+            className={`text-pretty text-white/50 ${
+              solo ? "mt-2 text-sm leading-relaxed" : "mt-1.5 text-[13px] leading-relaxed"
             }`}
           >
             {caption}

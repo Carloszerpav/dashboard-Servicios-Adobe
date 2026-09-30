@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -39,7 +40,7 @@ export function EventModal({
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div className="fixed inset-0 z-50 flex items-center justify-center p-5 sm:p-8">
       <motion.div
         aria-hidden
@@ -63,18 +64,21 @@ export function EventModal({
         transition={{ duration: 0.35, ease: EASE }}
         className={`gradient-frame relative w-full shadow-elevated ${className}`}
       >
-        <div className="surface relative max-h-[86vh] overflow-y-auto p-6 sm:p-8">
+        <div className="surface relative overflow-hidden">
           <button
             type="button"
             onClick={onClose}
             aria-label="Cerrar"
-            className="absolute right-4 top-4 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-white/60 transition-colors hover:border-white/25 hover:text-white"
+            className="absolute right-3 top-3 z-10 inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-ink-900/80 text-white/70 backdrop-blur-sm transition-colors hover:border-white/25 hover:text-white"
           >
             <X className="h-4 w-4" />
           </button>
-          {children}
+          <div className="max-h-[min(86vh,44rem)] overflow-y-auto p-6 pr-14 pt-7 sm:p-8 sm:pr-16 sm:pt-8">
+            {children}
+          </div>
         </div>
       </motion.div>
-    </div>
+    </div>,
+    document.body,
   );
 }

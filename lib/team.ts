@@ -45,14 +45,14 @@ export type TeamSegment = TeamGroup & {
 
 export type OrbitLevel = 1 | 2;
 
-/** Radios en porcentaje del lienzo orbital cuadrado (SVG y CSS comparten escala). */
+/** Radios en porcentaje del lienzo orbital (ya con margen para las etiquetas). */
 export const ORBIT_RADIUS: Record<OrbitLevel, number> = {
-  1: 29,
-  2: 41,
+  1: 30,
+  2: 42,
 };
 
 /** Anillos sin nodos que dan profundidad a la composición. */
-export const DECOR_RADIUS = [14, 35, 47] as const;
+export const DECOR_RADIUS = [15, 36, 48] as const;
 
 const ACCENT = {
   red: {
