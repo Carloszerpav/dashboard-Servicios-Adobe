@@ -49,7 +49,7 @@ export function MemberCard({
               alt={`Fotografía de ${member.name}`}
               width={320}
               height={320}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover object-top"
             />
           ) : (
             <span

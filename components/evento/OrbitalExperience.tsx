@@ -36,7 +36,7 @@ export function OrbitalExperience() {
       <motion.div
         initial="hidden"
         animate="show"
-        className="relative mx-auto aspect-square w-[min(100%,calc(100vh-24rem))] min-w-[20rem] max-w-[46rem]"
+        className="relative mx-auto aspect-square w-[min(100%,calc(100vh-26rem))] min-w-[20rem] max-w-[46rem]"
       >
         <OrbitField highlightedId={highlightedId} />
         <OrbitCore />
@@ -65,7 +65,7 @@ export function OrbitalExperience() {
       </motion.p>
 
       <AnimatePresence>
-        {active ? <SegmentPanel segment={active} onClose={close} /> : null}
+        {active ? <SegmentPanel group={active} onClose={close} /> : null}
       </AnimatePresence>
     </div>
   );

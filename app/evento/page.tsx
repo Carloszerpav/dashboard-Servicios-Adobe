@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
+import { BrandTeamTrigger } from "@/components/evento/BrandTeamTrigger";
 import { OrbitalExperience } from "@/components/evento/OrbitalExperience";
 import { WhatsAppChannel } from "@/components/evento/WhatsAppChannel";
 import { BrandLockup } from "@/components/ui/BrandLockup";
@@ -26,6 +27,7 @@ export default function EventoPage() {
           Ecosistema <span className="text-gradient-brand">Adobe</span> · Nexsys
           Chile
         </h1>
+        <BrandTeamTrigger />
       </header>
 
       <div className="flex min-h-0 w-full flex-1 items-center justify-center py-6">

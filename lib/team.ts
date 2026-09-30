@@ -26,17 +26,21 @@ export type SegmentAccent = {
   stroke: string;
 };
 
-export type TeamSegment = {
+/** Grupo que abre el mismo panel (órbita o bloque de marca). */
+export type TeamGroup = {
   id: string;
+  title: string;
+  eyebrow: string;
+  accent: SegmentAccent;
+  members: TeamMember[];
+};
+
+export type TeamSegment = TeamGroup & {
   /** Etiqueta breve que se muestra sobre la órbita. */
   label: string;
-  /** Nombre completo del segmento, usado en el panel. */
-  title: string;
   orbit: OrbitLevel;
   /** Grados sexagesimales: 0 = derecha, 90 = abajo. */
   angle: number;
-  accent: SegmentAccent;
-  members: TeamMember[];
 };
 
 export type OrbitLevel = 1 | 2;
@@ -81,32 +85,49 @@ const carlosZerpa = {
 };
 
 /**
- * Distribución con simetría bilateral: 3 nodos en la órbita interior y 4 en la
- * exterior, con al menos 30° de separación entre nodos de distinto anillo. El
- * recorrido horario desde el vértice superior sigue el ciclo de vida del
- * cliente y deja los segmentos de soporte en la mitad inferior.
+ * Cuatro nodos interiores y cuatro exteriores, desfasados 45° para que ningún
+ * par quede alineado. Gerencia queda en el vértice superior, junto al bloque
+ * Adobe que vive fuera de la órbita.
  */
 export const teamSegments: TeamSegment[] = [
   {
-    id: "comercial",
-    label: "Comercial",
-    title: "Equipo Comercial",
+    id: "gerencia",
+    label: "Gerencia",
+    title: "Gerencia",
+    eyebrow: "Nexsys Chile",
     orbit: 1,
     angle: 270,
     accent: ACCENT.red,
     members: [
       {
+        id: "gerencia-hernan-ravier",
+        name: "Hernán Ravier",
+        photoUrl: "/equipo/hernan-ravier.jpg",
+        initials: "HR",
+      },
+    ],
+  },
+  {
+    id: "comercial",
+    label: "Comercial",
+    title: "Equipo Comercial",
+    eyebrow: "Nexsys Chile",
+    orbit: 1,
+    angle: 0,
+    accent: ACCENT.ember,
+    members: [
+      {
         id: "comercial-javiera-castro",
         name: "Javiera Castro",
         role: "Brand Manager",
-        photoUrl: null,
+        photoUrl: "/equipo/javiera-castro.jpg",
         initials: "JC",
       },
       {
         id: "comercial-constanza-moya",
         name: "Constanza Moya",
         role: "Senior Account Manager Adobe ETLA",
-        photoUrl: null,
+        photoUrl: "/equipo/constanza-moya.jpg",
         initials: "CM",
       },
     ],
@@ -115,8 +136,9 @@ export const teamSegments: TeamSegment[] = [
     id: "preventa-posventa",
     label: "Preventa y Posventa",
     title: "Preventa y Posventa",
+    eyebrow: "Nexsys Chile",
     orbit: 2,
-    angle: 330,
+    angle: 315,
     accent: ACCENT.doccloud,
     members: [{ id: "preventa-posventa-carlos-zerpa", ...carlosZerpa }],
   },
@@ -124,8 +146,9 @@ export const teamSegments: TeamSegment[] = [
     id: "servicios",
     label: "Servicios",
     title: "Servicios",
+    eyebrow: "Nexsys Chile",
     orbit: 1,
-    angle: 30,
+    angle: 90,
     accent: ACCENT.creative,
     members: [{ id: "servicios-carlos-zerpa", ...carlosZerpa }],
   },
@@ -133,20 +156,21 @@ export const teamSegments: TeamSegment[] = [
     id: "renovaciones",
     label: "Renovaciones",
     title: "Renovaciones",
+    eyebrow: "Nexsys Chile",
     orbit: 2,
-    angle: 60,
+    angle: 45,
     accent: ACCENT.ember,
     members: [
       {
         id: "renovaciones-khendra-hurtado",
         name: "Khendra Hurtado",
-        photoUrl: null,
+        photoUrl: "/equipo/khendra-hurtado.jpg",
         initials: "KH",
       },
       {
         id: "renovaciones-mayra-giraldo",
         name: "Mayra Giraldo",
-        photoUrl: null,
+        photoUrl: "/equipo/mayra-giraldo.jpg",
         initials: "MG",
       },
     ],
@@ -155,15 +179,16 @@ export const teamSegments: TeamSegment[] = [
     id: "marketplace",
     label: "Marketplace",
     title: "Marketplace",
+    eyebrow: "Nexsys Chile",
     orbit: 2,
-    angle: 120,
+    angle: 135,
     accent: ACCENT.creative,
     members: [
       {
         id: "marketplace-francisco-araya",
         name: "Francisco Araya",
         role: "Marketplace Owner",
-        photoUrl: null,
+        photoUrl: "/equipo/francisco-araya.jpg",
         initials: "FA",
       },
     ],
@@ -172,14 +197,15 @@ export const teamSegments: TeamSegment[] = [
     id: "marketing",
     label: "Marketing",
     title: "Marketing",
+    eyebrow: "Nexsys Chile",
     orbit: 1,
-    angle: 150,
+    angle: 180,
     accent: ACCENT.doccloud,
     members: [
       {
         id: "marketing-luis-atabales",
         name: "Luis Atabales",
-        photoUrl: null,
+        photoUrl: "/equipo/luis-atabales.jpg",
         initials: "LA",
       },
     ],
@@ -188,19 +214,44 @@ export const teamSegments: TeamSegment[] = [
     id: "operaciones",
     label: "Operaciones",
     title: "Operaciones",
+    eyebrow: "Nexsys Chile",
     orbit: 2,
-    angle: 210,
+    angle: 225,
     accent: ACCENT.red,
     members: [
       {
         id: "operaciones-jean-sanchez",
         name: "Jean Sanchez",
-        photoUrl: null,
+        photoUrl: "/equipo/jean-sanchez.jpg",
         initials: "JS",
       },
     ],
   },
 ];
+
+/** Personas de Adobe, fuera de la órbita Nexsys: viven bajo el título. */
+export const adobeBrand: TeamGroup = {
+  id: "adobe-marca",
+  title: "Adobe",
+  eyebrow: "Marca",
+  accent: ACCENT.red,
+  members: [
+    {
+      id: "adobe-raimundo-valenzuela",
+      name: "Raimundo Valenzuela",
+      role: "Enterprise Sales Account Manager",
+      photoUrl: "/equipo/raimundo-valenzuela.png",
+      initials: "RV",
+    },
+    {
+      id: "adobe-wendy-campos",
+      name: "Wendy Campos",
+      role: "Channel Account Manager SLAM-SUR",
+      photoUrl: "/equipo/wendy-campos.jpg",
+      initials: "WC",
+    },
+  ],
+};
 
 /** Centro del lienzo en el mismo sistema de porcentajes que los radios. */
 export const ORBIT_CENTER = 50;
