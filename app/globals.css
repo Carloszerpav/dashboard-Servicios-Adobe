@@ -4,7 +4,14 @@
 
 @layer base {
   :root {
-    color-scheme: dark;
+    color-scheme: light;
+    /* Lienzo y superficies — modo claro para proyección en espacio abierto. */
+    --ink-950: 246 245 242;
+    --ink-900: 255 255 255;
+    --ink-800: 237 235 230;
+    --ink-700: 226 223 217;
+    /* Tinta: reemplaza el antiguo blanco de texto, bordes y cristales. */
+    --fg: 20 20 20;
   }
 
   html {
@@ -19,7 +26,7 @@
   }
 
   ::selection {
-    @apply bg-adobe-red/30 text-white;
+    @apply bg-adobe-red/30 text-snow;
   }
 
   ::-webkit-scrollbar {

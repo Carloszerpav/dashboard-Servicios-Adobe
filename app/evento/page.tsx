@@ -60,7 +60,7 @@ function AmbientBackdrop() {
       <div className="absolute inset-0 bg-grid-faint [background-size:64px_64px] opacity-50" />
       <div className="absolute -left-40 top-0 h-[32rem] w-[32rem] rounded-full bg-adobe-red/10 blur-[150px] animate-drift-slow" />
       <div className="absolute -right-32 bottom-0 h-[30rem] w-[30rem] rounded-full bg-doccloud/15 blur-[150px] animate-drift-slow [animation-delay:3s]" />
-      <div className="absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_45%,transparent_35%,rgba(13,13,13,0.85)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(60%_55%_at_50%_45%,transparent_35%,rgb(var(--ink-950)/0.92)_100%)]" />
     </div>
   );
 }

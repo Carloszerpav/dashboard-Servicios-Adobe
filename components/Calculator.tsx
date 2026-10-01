@@ -99,7 +99,7 @@ export function HoursCalculator() {
                       <span
                         className={`mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-md border transition-colors ${
                           checked
-                            ? "border-adobe-red bg-adobe-red text-white"
+                            ? "border-adobe-red bg-adobe-red text-snow"
                             : "border-white/20 bg-white/5 text-transparent"
                         }`}
                       >

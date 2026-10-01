@@ -11,11 +11,15 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          950: "#0D0D0D",
-          900: "#141414",
-          800: "#1A1A1A",
-          700: "#232323",
+          950: "rgb(var(--ink-950) / <alpha-value>)",
+          900: "rgb(var(--ink-900) / <alpha-value>)",
+          800: "rgb(var(--ink-800) / <alpha-value>)",
+          700: "rgb(var(--ink-700) / <alpha-value>)",
         },
+        /** Texto y bordes sobre el lienzo; en modo claro es tinta, no blanco. */
+        white: "rgb(var(--fg) / <alpha-value>)",
+        /** Blanco real para texto sobre rojo Adobe / gradiente de marca. */
+        snow: "#FFFFFF",
         adobe: {
           red: "#E31B23",
           ember: "#FF4B2B",
@@ -31,13 +35,13 @@ const config: Config = {
       },
       backgroundImage: {
         "grid-faint":
-          "linear-gradient(to right, rgba(255,255,255,0.035) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.035) 1px, transparent 1px)",
+          "linear-gradient(to right, rgb(var(--fg) / 0.07) 1px, transparent 1px), linear-gradient(to bottom, rgb(var(--fg) / 0.07) 1px, transparent 1px)",
         "brand-gradient":
           "linear-gradient(120deg, #E31B23 0%, #B4177A 50%, #7B2CBF 100%)",
       },
       boxShadow: {
-        elevated: "0 24px 70px -30px rgba(0,0,0,0.9)",
-        glow: "0 0 0 1px rgba(255,255,255,0.06), 0 30px 80px -40px rgba(227,27,35,0.55)",
+        elevated: "0 18px 50px -28px rgb(var(--fg) / 0.22)",
+        glow: "0 0 0 1px rgb(var(--fg) / 0.08), 0 24px 60px -36px rgba(227,27,35,0.28)",
       },
       keyframes: {
         "fade-up": {

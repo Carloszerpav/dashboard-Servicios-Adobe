@@ -79,9 +79,9 @@ export function OrbitField({ highlightedId }: OrbitFieldProps) {
             vectorEffect="non-scaling-stroke"
             className="transition-all duration-300"
             style={{
-              stroke: highlighted ? segment.accent.stroke : "#FFFFFF",
+              stroke: highlighted ? segment.accent.stroke : "rgb(var(--fg))",
               strokeWidth: highlighted ? 1.5 : 1,
-              opacity: highlighted ? 0.75 : 0.12,
+              opacity: highlighted ? 0.75 : 0.16,
             }}
           />
         );
@@ -93,8 +93,8 @@ export function OrbitField({ highlightedId }: OrbitFieldProps) {
           cx={ORBIT_CENTER}
           cy={ORBIT_CENTER}
           fill="none"
-          stroke="#FFFFFF"
-          strokeOpacity={ring.dashed ? 0.05 : 0.1}
+          stroke="rgb(var(--fg))"
+          strokeOpacity={ring.dashed ? 0.12 : 0.2}
           strokeDasharray={ring.dashed ? "0.6 1.4" : undefined}
           vectorEffect="non-scaling-stroke"
           initial={{ opacity: 0, r: ring.radius * 0.88 }}

@@ -49,7 +49,7 @@ export function EventModal({
         exit={{ opacity: 0 }}
         transition={{ duration: 0.3, ease: EASE }}
         onClick={onClose}
-        className="absolute inset-0 bg-ink-950/80 backdrop-blur-md"
+        className="absolute inset-0 bg-black/30 backdrop-blur-md"
       />
 
       <motion.div
