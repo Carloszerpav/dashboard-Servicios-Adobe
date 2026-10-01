@@ -28,7 +28,7 @@ export function Hero() {
             variants={item}
             className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1.5 pl-1.5 pr-4 backdrop-blur-md"
           >
-            <span className="rounded-full bg-brand-gradient px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-white">
+            <span className="rounded-full bg-brand-gradient px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-snow">
               Adobe
             </span>
             <span className="text-[12px] font-medium tracking-tight text-white/70">
@@ -129,7 +129,7 @@ function ProfileCard() {
             )}
           </div>
           <span className="absolute -bottom-1.5 -right-1.5 flex h-6 w-6 items-center justify-center rounded-full border border-ink-900 bg-adobe-red">
-            <ShieldCheck className="h-3.5 w-3.5 text-white" />
+            <ShieldCheck className="h-3.5 w-3.5 text-snow" />
           </span>
         </div>
 

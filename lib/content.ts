@@ -1,6 +1,5 @@
 import type { LucideIcon } from "lucide-react";
 import {
-  Aperture,
   BadgeCheck,
   Blocks,
   BrainCircuit,
@@ -162,16 +161,17 @@ export const planCategories: PlanCategory[] = [
         icon: Workflow,
         featured: true,
         summary:
-          "Los procesos de firma viven donde ya trabaja tu equipo: Teams y SharePoint.",
+          "Los procesos de firma y la protección de datos viven donde ya trabaja tu equipo: Teams, SharePoint y Microsoft 365.",
         scope: [
           "Integración con M365 (Teams / SharePoint)",
           "3 flujos automatizados en Power Automate",
           "Modelo de permisos, alertas y trazabilidad",
+          "Microsoft Purview + Acrobat: etiquetas de sensibilidad, clasificación y protección de datos en PDF",
         ],
       },
       {
         id: "dc-3",
-        name: "Advanced Integration & API",
+        name: "PDF Services",
         dedication: "Bolsa de 50 hrs",
         tag: "Integración",
         icon: Network,
@@ -215,25 +215,12 @@ export const planCategories: PlanCategory[] = [
         icon: Paintbrush,
         featured: true,
         summary:
-          "Menos trabajo repetitivo en el pipeline creativo, más piezas por sprint.",
+          "Menos trabajo repetitivo en el pipeline creativo, más piezas por sprint, ahora también desde Microsoft 365 Copilot.",
         scope: [
           "Automatización de retoque masivo con scripts UXP",
           "Plantillas corporativas en Adobe Express",
           "Estandarización de entregables multiformato",
-        ],
-      },
-      {
-        id: "cc-3",
-        name: "Advanced AI & Firefly Services APIs",
-        dedication: "Bolsa de 100 hrs",
-        tag: "IA Avanzada",
-        icon: Aperture,
-        summary:
-          "Generación de contenido a escala industrial con modelos propios y trazabilidad.",
-        scope: [
-          "Integración de Firefly APIs para volumen masivo",
-          "Entrenamiento de Custom Models de marca",
-          "Trazabilidad de contenido con C2PA",
+          "Microsoft 365 Copilot + suite creativa: Express, Firefly y activos Adobe en Word, PowerPoint y Teams",
         ],
       },
     ],

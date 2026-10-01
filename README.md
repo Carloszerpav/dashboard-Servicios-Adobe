@@ -82,3 +82,49 @@ Todo el contenido comercial (planes, horas, alcances, especialidades) vive en `l
 **Fotografía de perfil:** apunta `profile.photoUrl` en `lib/content.ts` al archivo dentro de `public/`. Si queda en `null` se muestra el avatar tipográfico con las iniciales.
 
 **Envío del formulario:** `handleSubmit` en `components/Contact.tsx` simula el envío. Reemplaza el `setTimeout` por la llamada real al endpoint, CRM o servicio de correo de Nexsys.
+
+## Experiencia de evento (`/evento`)
+
+Pantalla de apertura para presentaciones presenciales, disponible **solo en la rama `evento-2026`**. Es un mapa orbital del equipo Adobe de Nexsys Chile: un núcleo central y dos órbitas con los siete segmentos, donde cada segmento abre un panel con las personas que lo integran.
+
+Vive aislada del resto de la landing para poder retirarse sin reconstruir nada: basta con borrar `app/evento/`, `components/evento/`, `lib/team.ts` y `public/evento/`. No modifica ningún componente, estilo ni dato existente.
+
+```
+app/evento/page.tsx                     Ruta, metadata (noindex) y composición
+components/evento/
+  OrbitalExperience.tsx                 Orquestador: secuencia, selección y panel
+  OrbitField.tsx                        Anillos, conexiones y puntos orbitantes (SVG)
+  OrbitCore.tsx                         Núcleo Adobe · Nexsys Chile · 360°
+  SegmentNode.tsx                       Nodo interactivo de cada segmento
+  SegmentPanel.tsx                      Panel del segmento (individual o grupal)
+  MemberCard.tsx                        Tarjeta de persona
+  EventModal.tsx                        Modal base (overlay, Escape, foco)
+  WhatsAppChannel.tsx                   Botón y modal con el QR del canal
+lib/team.ts                             Segmentos, personas y geometría orbital
+public/equipo/                          Fotografías del equipo
+public/evento/whatsapp-qr.jpg           QR del canal de WhatsApp
+```
+
+### Fotografías del equipo
+
+Coloca cada archivo en `public/equipo/` y apunta su `photoUrl` en `lib/team.ts`. Mientras el valor sea `null` la tarjeta muestra el avatar tipográfico con las iniciales, igual que el perfil de la landing.
+
+| Persona | Archivo esperado |
+| --- | --- |
+| Luis Atabales | `public/equipo/luis-atabales.jpg` |
+| Francisco Araya | `public/equipo/francisco-araya.jpg` |
+| Jean Sanchez | `public/equipo/jean-sanchez.jpg` |
+| Javiera Castro | `public/equipo/javiera-castro.jpg` |
+| Constanza Moya | `public/equipo/constanza-moya.jpg` |
+| Khendra Hurtado | `public/equipo/khendra-hurtado.jpg` |
+| Mayra Giraldo | `public/equipo/mayra-giraldo.jpg` |
+
+Formato recomendado: JPG cuadrado de 640x640 con encuadre a rostro y hombros, igual que `carlos-zerpa.jpg`. Carlos Zerpa reutiliza esa fotografía ya existente en la raíz de `public/`, sin duplicarla.
+
+### QR del canal de WhatsApp
+
+`public/evento/whatsapp-qr.jpg` se muestra tal cual en el modal, sin generación por código ni servicios externos. Para cambiarlo, reemplaza el archivo y actualiza `whatsappChannel` en `lib/team.ts` si la imagen tiene otras dimensiones.
+
+### Animación
+
+La secuencia de apertura encadena núcleo, anillos y nodos con la curva `EASE` del proyecto. Solo los detalles decorativos (puntos sobre las órbitas) mantienen movimiento continuo; los nodos de segmento son estáticos para no dificultar la lectura ni el click. Todo el movimiento se desactiva con `prefers-reduced-motion`.

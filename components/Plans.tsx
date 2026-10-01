@@ -87,9 +87,11 @@ export function Plans() {
 
             <div
               className={`mt-10 grid gap-5 ${
-                active.plans.length > 1
+                active.plans.length > 2
                   ? "md:grid-cols-2 lg:grid-cols-3"
-                  : "mx-auto max-w-2xl"
+                  : active.plans.length > 1
+                    ? "mx-auto max-w-4xl md:grid-cols-2"
+                    : "mx-auto max-w-2xl"
               }`}
             >
               {active.plans.map((plan, index) => (

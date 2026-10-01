@@ -1,0 +1,99 @@
+"use client";
+
+import { motion } from "framer-motion";
+
+import { EASE } from "@/components/ui/Reveal";
+import { orbitPosition, type TeamSegment } from "@/lib/team";
+
+export const nodeVariants = {
+  hidden: { opacity: 0, scale: 0.6 },
+  show: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: EASE },
+  },
+};
+
+/** Coloca la etiqueta hacia afuera del centro para que no choque con el vecino. */
+function labelPlacement(angle: number) {
+  const radians = (angle * Math.PI) / 180;
+  const outwardX = Math.cos(radians);
+  const outwardY = Math.sin(radians);
+
+  if (Math.abs(outwardY) > Math.abs(outwardX)) {
+    return outwardY > 0
+      ? "left-1/2 top-[calc(100%+0.4rem)] w-32 -translate-x-1/2 text-center sm:w-40"
+      : "bottom-[calc(100%+0.4rem)] left-1/2 w-32 -translate-x-1/2 text-center sm:w-40";
+  }
+
+  return outwardX > 0
+    ? "left-[calc(100%+0.55rem)] top-1/2 w-36 -translate-y-1/2 text-left sm:w-44"
+    : "right-[calc(100%+0.55rem)] top-1/2 w-36 -translate-y-1/2 text-right sm:w-44";
+}
+
+type SegmentNodeProps = {
+  segment: TeamSegment;
+  active: boolean;
+  /** Atenúa el nodo cuando otro segmento está seleccionado. */
+  dimmed: boolean;
+  onSelect: (id: string) => void;
+  onHighlight: (id: string | null) => void;
+};
+
+export function SegmentNode({
+  segment,
+  active,
+  dimmed,
+  onSelect,
+  onHighlight,
+}: SegmentNodeProps) {
+  const { x, y } = orbitPosition(segment);
+
+  return (
+    <motion.button
+      type="button"
+      variants={nodeVariants}
+      onClick={() => onSelect(segment.id)}
+      onPointerEnter={() => onHighlight(segment.id)}
+      onPointerLeave={() => onHighlight(null)}
+      onFocus={() => onHighlight(segment.id)}
+      onBlur={() => onHighlight(null)}
+      aria-haspopup="dialog"
+      aria-pressed={active}
+      className={`group absolute flex h-12 w-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full transition-opacity duration-300 ${
+        segment.accent.text
+      } ${dimmed ? "opacity-35" : "opacity-100"}`}
+      style={{ left: `${x}%`, top: `${y}%` }}
+    >
+      <span
+        aria-hidden
+        className={`absolute inset-0 rounded-full bg-current blur-lg transition-opacity duration-300 ${
+          active ? "opacity-30" : "opacity-0 group-hover:opacity-20"
+        }`}
+      />
+
+      <span
+        aria-hidden
+        className={`relative flex items-center justify-center rounded-full border bg-ink-900/90 backdrop-blur-sm transition-all duration-300 ${
+          active
+            ? "h-6 w-6 border-white/45"
+            : "h-5 w-5 border-white/20 group-hover:h-6 group-hover:w-6 group-hover:border-white/40"
+        }`}
+      >
+        <span
+          className={`rounded-full bg-current transition-all duration-300 ${
+            active ? "h-2.5 w-2.5" : "h-2 w-2 group-hover:h-2.5 group-hover:w-2.5"
+          }`}
+        />
+      </span>
+
+      <span
+        className={`absolute text-balance text-[10px] font-semibold uppercase leading-tight tracking-[0.12em] transition-colors duration-300 sm:text-[12px] lg:text-[13px] ${labelPlacement(
+          segment.angle,
+        )} ${active ? "text-white" : "text-white/55 group-hover:text-white"}`}
+      >
+        {segment.label}
+      </span>
+    </motion.button>
+  );
+}

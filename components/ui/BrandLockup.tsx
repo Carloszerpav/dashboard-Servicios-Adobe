@@ -26,7 +26,7 @@ export function BrandLockup({ size = "sm", priority }: BrandLockupProps) {
         height={nexsys}
         priority={priority}
         unoptimized
-        className="w-auto"
+        className="w-auto brightness-0"
         style={{ height: nexsys }}
       />
       <span className={`${divider} w-px shrink-0 bg-white/15`} />
